@@ -1,0 +1,20 @@
+#GENERAL SETTINGS
+debug=false
+server.port=9010
+
+#Eureka config
+spring.application.name=payment
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+eureka.client.log-delta-diff=false
+eureka.client.register-with-eureka=true
+eureka.instance.prefer-ip-address=true
+
+
+
+#CASSANDRA Config
+spring.data.cassandra.port=9042
+spring.data.cassandra.keyspace-name=vericab
+spring.data.cassandra.contact-points=localhost
+spring.data.cassandra.schema-action=create-if-not-exists
+
+

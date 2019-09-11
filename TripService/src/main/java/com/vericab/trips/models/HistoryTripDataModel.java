@@ -1,0 +1,34 @@
+package com.vericab.trips.models;
+
+import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
+import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
+import org.springframework.data.cassandra.core.mapping.Table;
+import org.springframework.stereotype.Component;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(value = "history")
+@Component
+public class HistoryTripDataModel {
+
+	@PrimaryKeyColumn(type = PrimaryKeyType.PARTITIONED)
+	private Long driverId;
+	@PrimaryKeyColumn(type = PrimaryKeyType.PARTITIONED)
+	private Long passengerId;
+	@PrimaryKeyColumn(type = PrimaryKeyType.PARTITIONED)
+	private Long tripId;
+	private String  passengerName;
+	private String driverName;
+	private String sourceLocation;
+	private String dateAndTimeOfTrip;
+	private Boolean tripCompleted;
+	private Double fare;
+	
+
+} 
